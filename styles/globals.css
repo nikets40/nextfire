@@ -176,6 +176,10 @@ button.btn-logo {
   border-radius: 8px;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 .card footer {
   display: flex;
 }

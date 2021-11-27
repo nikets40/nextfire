@@ -16,13 +16,13 @@ const PostItem: React.FC<any> = ({ post, admin = false }) => {
 
   return (
     <div className="card">
-      <Link href={`/${post.username}`}>
+      <Link passHref href={`/${post.username}`}>
         <a>
           <strong>By @{post.username}</strong>
         </a>
       </Link>
 
-      <Link href={`/${post.username}/${post.slug}`}>
+      <Link passHref href={`/${post.username}/${post.slug}`}>
         <h2>
           <a>{post.title}</a>
         </h2>
@@ -32,8 +32,21 @@ const PostItem: React.FC<any> = ({ post, admin = false }) => {
         <span>
           {wordCount} words • {minToRead} min read
         </span>
-        <span>❤️ {post.heartCount} Hearts</span>
+        <span className="push-left">💗 {post.heartCount || 0} Hearts</span>
       </footer>
+
+       {/* If admin view, show extra controls for user */}
+       {admin && (
+        <>
+          <Link passHref href={`/admin/${post.slug}`}>
+            <h3>
+              <button className="btn-blue">Edit</button>
+            </h3>
+          </Link>
+
+          {post.published ? <p className="text-success">Live</p> : <p className="text-danger">Unpublished</p>}
+        </>
+      )}
     </div>
   );
 };

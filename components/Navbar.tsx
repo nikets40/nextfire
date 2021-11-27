@@ -13,7 +13,7 @@ const Navbar: React.FC = () => {
     <nav className="navbar">
       <ul>
         <li>
-          <Link href="/">
+          <Link passHref href="/">
             <button className="btn-logo">NXT</button>
           </Link>
         </li>
@@ -21,13 +21,13 @@ const Navbar: React.FC = () => {
         {(userData?.username) && (
           <>
             <li className="push-left">
-              <Link href="/admin">
+              <Link passHref href="/admin">
                 <button className="btn-blue">Write Post</button>
               </Link>
             </li>
 
             <li>
-              <Link href={`/${userData.username}`}>
+              <Link passHref href={`/${userData.username}`}>
                 <img
                   className="avatar"
                   src={userData?.user?.photoURL??""}
@@ -40,7 +40,7 @@ const Navbar: React.FC = () => {
 
         {!userData?.username && (
           <li>
-            <Link href="/enter">
+            <Link passHref href="/enter">
               <button className="btn-blue">Log in</button>
             </Link>
           </li>
