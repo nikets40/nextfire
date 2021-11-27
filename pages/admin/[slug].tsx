@@ -60,7 +60,7 @@ const PostManager: React.FC = () => {
             <button onClick={() => setPreview(!preview)}>
               {preview ? "Edit" : "Preview"}
             </button>
-            <Link href={`/${post.username}/${post.slug}`}>
+            <Link href={`/${post.username}/${post.slug}`} passHref>
               <button className="btn-blue">Live View</button>
             </Link>
           </aside>

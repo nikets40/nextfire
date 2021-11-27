@@ -12,7 +12,7 @@ export const Custom404: NextPage = () => {
         frameBorder="0"
         allowFullScreen
       ></iframe>
-      <Link href="/">
+      <Link href="/" passHref>
         <button className="btn-blue">Go home</button>
       </Link>
     </main>

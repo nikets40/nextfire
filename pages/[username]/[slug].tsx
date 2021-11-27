@@ -61,7 +61,7 @@ const Post: NextPage<any> = (props) => {
         </p>
 
         <AuthCheck fallback={
-          <Link href="/enter">
+          <Link href="/enter" passHref>
 
             <button>❤️ Sign Up</button>
           </Link>
