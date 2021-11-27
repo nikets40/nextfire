@@ -18,7 +18,7 @@ export const PostContent: React.FC<any> = ({ post }) => {
         on {createdAt.toDateString()}
       </span>
 
-      <ReactMarkdown children={post?.content} />
+      <ReactMarkdown>{post?.content}</ReactMarkdown>
     </div>
   );
 };
